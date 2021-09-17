@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import Zone2 from './Zone2'
-import uuidv4 from 'uuid/v4'
 
 function Zone1() {
   
@@ -8,12 +7,16 @@ function Zone1() {
   const [cityList, setCityList] = useState([])
 
   function handleClick() {
-    const cityName = cityRef.current.value
+    var cityName = cityRef.current.value
     if (cityName === '') return
     
-    setCityList(prevCity => {
-      return [...prevCity, {id: uuidv4(), name: cityName}]
+    cityName = cityName.split(' ')
+    cityName = cityName.map((a, i) => {
+      setCityList(prevCity => {
+        return [...prevCity, {id: i, name: a}]
+      })
     })
+
     cityRef.current.value = null;
   } 
 

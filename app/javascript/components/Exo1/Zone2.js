@@ -1,17 +1,31 @@
 import React from 'react'
 import City from './City'
 
-function Zone2({cityList, onDelete}) {
+const cityArr = [{name: 'paris'}, {name: 'lyon'}, {name: 'lille'}, {name: 'marseille'}, {name: 'toulouse'}]
 
+function Zone2({cityList, onDelete}) {
+  
   return (
     <div className="flex">
-      {cityList.map(a => {
+      
+      {cityList.map((a, i) => {
         if (a.name === "paris" || a.name === "lyon" || a.name === "marseille" || a.name === "toulouse" || a.name === "lille" || a.name === "bordeau") {
+          return (
+            <City key={i} city={a} onDelete={onDelete}/>
+          )
+        }
+
+      })}
+
+      {/*
+      {cityList.map(a => {
+        if (a.name.includes("paris") || a.name === "lyon" || a.name === "marseille" || a.name === "toulouse" || a.name === "lille" || a.name === "bordeau") {
           return (
             <City key={a.id} city={a} onDelete={onDelete}/>
           )
         }
       })}
+      */}
     </div>
   )
 }
