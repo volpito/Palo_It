@@ -16,16 +16,6 @@ function Zone2({cityList, onDelete}) {
         }
 
       })}
-
-      {/*
-      {cityList.map(a => {
-        if (a.name.includes("paris") || a.name === "lyon" || a.name === "marseille" || a.name === "toulouse" || a.name === "lille" || a.name === "bordeau") {
-          return (
-            <City key={a.id} city={a} onDelete={onDelete}/>
-          )
-        }
-      })}
-      */}
     </div>
   )
 }
