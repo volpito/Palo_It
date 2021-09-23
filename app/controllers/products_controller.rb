@@ -5,8 +5,16 @@ class ProductsController < ApplicationController
     @products = Product.all
     @cities = City.all
     @city = City.find_by(id: params[:city_id])
+    @res = []
+    
+    @products.each do |prod|
+      if prod.prodCity == @city.cityName
+        @res << prod
+      end
+    end
+    render json:{ :products => @res}.to_json
   end
-
+  
   # GET /products or /products.json
   def index
     @products = Product.all
@@ -30,10 +38,10 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    if @product.city_id=='1'
-      @product.city_id = 1
-      @product.prodCity = "Lyon"
-    end
+    #if @product.city_id=='1'
+    #  @product.city_id = 1
+    #  @product.prodCity = "Lyon"
+    #end
 
     respond_to do |format|
       if @product.save

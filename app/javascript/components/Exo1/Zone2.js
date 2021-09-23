@@ -2,11 +2,12 @@ import React from 'react'
 import City from './City'
 import Button from '../Exo3/Button';
 
-function Zone2({cityList, onDelete}) {
+function Zone2({cityList, onDelete, onSearch}) {
 
   return (
     <>
-        <Button value={'Search'}/>
+    
+    <Button value={'Search'} onSearch={onSearch} city={cityList}/>
 
     <div className="flex">
       

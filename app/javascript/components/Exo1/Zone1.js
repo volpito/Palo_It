@@ -22,6 +22,11 @@ function Zone1() {
     cityRef.current.value = null;
   } 
 
+  const handleSearch = (city) => {
+    console.log(city)
+    setCityList(cityList.filter(a => a.name === city))
+  }
+
   const deleteCity = (id) => {
     setCityList(cityList.filter(a => a.id !== id))
   }
@@ -45,7 +50,7 @@ function Zone1() {
           </button> 
         </div>   
       </div>
-      <Zone2 cityList={cityList} onDelete={deleteCity}/>
+      <Zone2 cityList={cityList} onDelete={deleteCity} onSearch={handleSearch}/>
       <Zone3 />
     </>
   )

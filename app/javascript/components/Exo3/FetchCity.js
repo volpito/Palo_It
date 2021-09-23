@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-function Fetch( ) {
+function FetchCity( ) {
 
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`/products`, {
+    fetch(`/products/city/${id}`, {
       method: 'get',
     })    
     .then((res) => {
@@ -54,4 +54,4 @@ function Fetch( ) {
   )
 }
 
-export default Fetch
+export default FetchCity
