@@ -6,7 +6,7 @@ const City = ({city, onDelete}) => {
   return (
     <div>
       <button 
-        className="flex bg-gray border border-black rounded px-2 mx-2 capitalize">
+        className="flex bg-gray border border-black rounded px-2 mx-2 mb-4 capitalize">
         {city.name + " "} 
         <FaTimes onClick={() => onDelete(city.id)} className="bg-gray border border-black rounded my-auto ml-1"/>
       </button>

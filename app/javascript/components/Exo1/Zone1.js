@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Zone2 from './Zone2'
+import uuid from 'uuid/v4'
+import Zone3 from '../Exo3/Zone3';
 
 function Zone1() {
   
@@ -13,7 +15,7 @@ function Zone1() {
     cityName = cityName.split(' ')
     cityName = cityName.map((a, i) => {
       setCityList(prevCity => {
-        return [...prevCity, {id: i, name: a}]
+        return [...prevCity, {id: {uuid}, name: a}]
       })
     })
 
@@ -44,6 +46,7 @@ function Zone1() {
         </div>   
       </div>
       <Zone2 cityList={cityList} onDelete={deleteCity}/>
+      <Zone3 />
     </>
   )
 }

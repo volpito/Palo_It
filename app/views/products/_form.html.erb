@@ -1,0 +1,53 @@
+<%= form_with(model: product) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :prodRef %>
+    <%= form.text_field :prodRef %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prodName %>
+    <%= form.text_field :prodName %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prodPrice %>
+    <%= form.text_field :prodPrice %>
+  </div>
+
+  <%= form.label :prodCity %>
+
+  <div class="flex field my-2">
+    <div class="ml-1">
+    <%= form.radio_button :city_id, @product.city_id=[1] %> 
+    <%= form.label :city_id, ' Lyon' %>
+    </div>
+    <div class="ml-4">
+    <%= form.radio_button :city_id, @product.city_id=[2] %> 
+    <%= form.label :city_id, ' Marseille' %>
+    </div>
+    <div class="ml-4">
+    <%= form.radio_button :city_id, @product.city_id=[3] %> 
+    <%= form.label :city_id, ' Lille'%>
+    </div>
+    <div class="ml-4">
+    <%= form.radio_button :city_id, @product.city_id=[4] %> 
+    <%= form.label :city_id, ' Paris'%>
+    </div>
+  </div>
+
+  <div class="actions mt-8">
+    <%= form.submit %>
+  </div>
+<% end %>
