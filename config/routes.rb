@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   get "/home", to: 'products#index'
+  get '/products/city/:city_id', to: 'products#city', as: 'all_owners'
 
   root 'static#index'
 

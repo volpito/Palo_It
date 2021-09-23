@@ -22,16 +22,32 @@
   </div>
 
   <div class="field">
-    <%= form.label :prodCity %>
-    <%= form.text_field :prodCity %>
-  </div>
-
-  <div class="field">
     <%= form.label :prodPrice %>
     <%= form.text_field :prodPrice %>
   </div>
 
-  <div class="actions">
+  <%= form.label :prodCity %>
+
+  <div class="flex field my-2">
+    <div class="ml-1">
+    <%= form.radio_button :city_id, @product.city_id=[1] %> 
+    <%= form.label :city_id, ' Lyon' %>
+    </div>
+    <div class="ml-4">
+    <%= form.radio_button :city_id, @product.city_id=[2] %> 
+    <%= form.label :city_id, ' Marseille' %>
+    </div>
+    <div class="ml-4">
+    <%= form.radio_button :city_id, @product.city_id=[3] %> 
+    <%= form.label :city_id, ' Lille'%>
+    </div>
+    <div class="ml-4">
+    <%= form.radio_button :city_id, @product.city_id=[4] %> 
+    <%= form.label :city_id, ' Paris'%>
+    </div>
+  </div>
+
+  <div class="actions mt-8">
     <%= form.submit %>
   </div>
 <% end %>

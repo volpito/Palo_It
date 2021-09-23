@@ -1,0 +1,29 @@
+<h2 class="m-5"> Here you can find any product from your beloved city :</h2>
+
+<div class="card">
+<div class="table-responsive">
+<table class="table table-xs mb-0">
+
+  <thead>
+      <tr>
+          <th>Ref</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Price</th>
+      </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |product| %>
+    <% if product.city_id == params[:city_id].to_i %>
+      <tr>
+          <td><%= product.prodRef %></td>
+          <td><%= product.prodName %></td>
+          <td><%= product.prodCity %></td>
+          <td><%= product.prodPrice %></td>
+      </tr>     
+      <% end %>
+      <% end %>
+  </tbody>
+</table>
+</div>
+</div>

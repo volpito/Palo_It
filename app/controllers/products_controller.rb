@@ -1,9 +1,16 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
+  def city 
+    @products = Product.all
+    @cities = City.all
+    @city = City.find_by(id: params[:city_id])
+  end
+
   # GET /products or /products.json
   def index
     @products = Product.all
+    render json:{ :products => @products }.to_json
   end
 
   # GET /products/1 or /products/1.json
@@ -22,6 +29,11 @@ class ProductsController < ApplicationController
   # POST /products or /products.json
   def create
     @product = Product.new(product_params)
+
+    if @product.city_id=='1'
+      @product.city_id = 1
+      @product.prodCity = "Lyon"
+    end
 
     respond_to do |format|
       if @product.save
