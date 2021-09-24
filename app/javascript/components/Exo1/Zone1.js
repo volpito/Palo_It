@@ -1,18 +1,37 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import Zone2 from './Zone2'
 import uuid from 'uuid/v4'
 import Zone3 from '../Exo3/Zone3';
+import FetchCity from '../Exo3/FetchCity';
 
 function Zone1() {
   
   const cityRef = useRef()
   const [cityList, setCityList] = useState([])
+  const [searchId, setSearchId] = useState([])
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch(`/products`, {
+      method: 'get',
+    })    
+    .then((res) => {
+      return res.json()
+    })
+    .then((data) => {
+      setProducts(data.products);
+    })
+    .catch(function () {
+      console.log("error fetch zone 1");
+    });
+
+  }, []);
 
   function handleClick() {
     var cityName = cityRef.current.value
     if (cityName === '') return
-    
-    cityName = cityName.split(' ')
+    cityName = cityName.toLowerCase().split(' ')
+    cityName = cityName.filter(a => a == 'lyon' || a == 'paris' || a == 'marseille' || a == 'toulouse' || a == 'lille')
     cityName = cityName.map((a, i) => {
       setCityList(prevCity => {
         return [...prevCity, {id: {uuid}, name: a}]
@@ -22,9 +41,18 @@ function Zone1() {
     cityRef.current.value = null;
   } 
 
-  const handleSearch = (city) => {
-    console.log(city)
-    setCityList(cityList.filter(a => a.name === city))
+  function handleSearch(city) {
+    products.filter((a) => {
+      if(a.prodCity == ""){
+        setSearchId(null)
+      }
+      for(var i=0; i<city.length; i++){
+        if(a.prodCity.toLowerCase() == city[i]){
+          setSearchId(a.city_id)
+        }        
+      }
+    })
+    console.log(searchId)
   }
 
   const deleteCity = (id) => {
@@ -51,7 +79,7 @@ function Zone1() {
         </div>   
       </div>
       <Zone2 cityList={cityList} onDelete={deleteCity} onSearch={handleSearch}/>
-      <Zone3 />
+      <Zone3 id={searchId}/>
     </>
   )
 }

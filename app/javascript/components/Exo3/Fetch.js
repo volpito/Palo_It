@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Zone1 from '../Exo1/Zone1';
 
 function Fetch( ) {
 
@@ -15,12 +16,10 @@ function Fetch( ) {
       setProducts(data.products);
     })
     .catch(function () {
-      console.log("error mutafuka");
+      console.log("error fetch");
     });
 
   }, []);
-
-  console.log(products);
 
   return (
     <div>
@@ -28,11 +27,12 @@ function Fetch( ) {
       <table className="table-fixed">
             <thead>
               <tr>
-                <th className="w-1/12"> Id   </th>
-                <th className="w-1/12"> Ref  </th>
-                <th className="w-1/12"> Name </th>
-                <th className="w-1/12"> City </th>
-                <th className="w-1/12"> Price</th>
+                <th className="w-1/12"> Id     </th>
+                <th className="w-1/12"> CityId </th>
+                <th className="w-1/12"> Ref    </th>
+                <th className="w-1/12"> Name   </th>
+                <th className="w-1/12"> City   </th>
+                <th className="w-1/12"> Price  </th>
               </tr>
             </thead>
       {products.map((a, i) => {
@@ -41,6 +41,7 @@ function Fetch( ) {
             <tbody key={i}>
               <tr >
                 <td className="text-center">{a.id}</td>
+                <td className="text-center">{a.city_id}</td>
                 <td className="text-center">{a.prodRef}</td>
                 <td className="text-center">{a.prodName}</td>
                 <td className="text-center">{a.prodCity}</td>

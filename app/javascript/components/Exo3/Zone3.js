@@ -1,12 +1,12 @@
 import React from 'react'
 import Fetch from './Fetch';
-import Search from './Search';
+import FetchCity from './FetchCity';
 
-function Zone3() {
+function Zone3( {id} ) {
   return (
     <div>
       <Fetch />
-      <Search />
+      <FetchCity id={id} />
     </div>
   )
 }
