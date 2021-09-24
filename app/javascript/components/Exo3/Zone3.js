@@ -3,12 +3,15 @@ import Fetch from './Fetch';
 import FetchCity from './FetchCity';
 
 function Zone3( {id} ) {
-  return (
-    <div>
-      <Fetch />
+  if(id.length == 0){
+    return(
+      <Fetch/>
+    )
+  }else{
+    return(
       <FetchCity id={id} />
-    </div>
-  )
+    )
+  }
 }
 
 export default Zone3

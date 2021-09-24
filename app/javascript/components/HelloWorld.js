@@ -7,7 +7,7 @@ class HelloWorld extends React.Component {
     return (
       <div className='mt-10 mb-5'>
       <React.Fragment>
-        Hello: {this.props.greeting}
+        {this.props.greeting}
       </React.Fragment>
       </div>
     );

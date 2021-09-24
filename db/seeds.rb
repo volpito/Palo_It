@@ -17,4 +17,4 @@ Product.create(prodRef: 'OIPZERF',prodCity: 'paris',prodName: 'palette',prodPric
 Product.create(prodRef: 'OIPEF',prodCity: 'paris',prodName: 'trotinette',prodPrice: '200', city_id: 4)
 Product.create(prodRef: 'OIPERF',prodCity: 'lyon',prodName: 'bolinette',prodPrice: '200', city_id: 1)
 Product.create(prodRef: 'OIPFREF',prodCity: 'lille',prodName: 'biquette',prodPrice: '200', city_id: 3)
-Product.create(prodRef: 'OIPFREF',prodCity: 'toulouse',prodName: 'biquette',prodPrice: '200', city_id: 5)
+Product.create(prodRef: 'OREF',prodCity: 'toulouse',prodName: 'chopinette',prodPrice: '200', city_id: 5)
