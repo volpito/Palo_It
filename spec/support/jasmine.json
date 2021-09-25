@@ -4,8 +4,9 @@
     "**/*[sS]pec.?(m)js"
   ],
   "helpers": [
-    "helpers/**/*.?(m)js"
-  ],
+  "helpers/babel.js",
+  "helpers/**/*.js"
+],
   "stopSpecOnExpectationFailure": false,
   "random": true
 }

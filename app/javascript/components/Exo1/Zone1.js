@@ -2,7 +2,6 @@ import React, { useRef, useState, useEffect } from 'react'
 import Zone2 from './Zone2'
 import uuid from 'uuid/v4'
 import Zone3 from '../Exo3/Zone3';
-import FetchCity from '../Exo3/FetchCity';
 
 function Zone1() {
   

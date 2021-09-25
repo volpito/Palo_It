@@ -7,7 +7,7 @@ function Fetch() {
   
   const [products, setProducts] = useState([]);
 
-  const fetchProducts =() => {
+  const fetchProducts = () => {
     fetch(`/products`, {
     method: 'get',
     })    
@@ -25,7 +25,7 @@ function Fetch() {
   useEffect( () => {fetchProducts();}, [/* products */]);  //but infinite server loop
   
   return (
-    <div>
+    <div title="fetchTitle">
       <h1 className="my-6">Here are the listed items : </h1>
       <table className="table-fixed">
         <thead>

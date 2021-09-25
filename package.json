@@ -15,6 +15,7 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react_ujs": "^2.6.1",
+    "sinon": "^11.1.2",
     "tailwindcss": "^2.2.15",
     "turbolinks": "^5.2.0",
     "uuid": "^8.3.2",
@@ -22,10 +23,26 @@
     "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "test": "jasmine spec/PALO_specs.js"
- },
+    "test": "cross-env NODE_ENV=test jasmine spec/PALO_specs.test.js",
+    "test_hello": "cross-env NODE_ENV=test jasmine app/javascript/components/hello_specs.test.js"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
   "version": "0.1.0",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/register": "^7.15.3",
+    "@testing-library/react": "^12.1.0",
+    "babel-preset-react-app": "^10.0.0",
+    "cross-env": "^7.0.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "ignore-styles": "^5.0.1",
+    "jasmine-enzyme": "^7.1.2",
+    "jsdom": "^17.0.0",
     "webpack-dev-server": "^3"
   }
 }
