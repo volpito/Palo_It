@@ -36,7 +36,6 @@ function Zone1() {
         return [...prevCity, {id: {uuid}, name: a}]
       })
     })
-
     cityRef.current.value = null;
   } 
 
@@ -63,6 +62,7 @@ function Zone1() {
       <div className='flex my-5'>
         <input
           required
+          title='helloCityName'
           ref={cityRef}
           className="appearance-none min-w-0 w-full bg-white border border-black rounded-md py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400 sm:max-w-xs"
           placeholder="Enter a City Name"
