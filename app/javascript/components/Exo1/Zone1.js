@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import Zone2 from './Zone2'
 import uuid from 'uuid/v4'
 import Zone3 from '../Exo3/Zone3';
+import Parse from '../TinyArythmeticExpressionParser/TinyArythmeticExpressionParser'
 
 function Zone1() {
   
@@ -79,6 +80,16 @@ function Zone1() {
       </div>
       <Zone2 cityList={cityList} onDelete={deleteCity} onSearch={handleSearch}/>
       <Zone3 id={searchId}/>
+
+      <div>
+        <h2 className="font-black">Here are a few expressions : </h2>
+        <Parse expression={'10,50+2,30'}/>
+        <Parse expression={'25,60-13,1'}/>
+        <Parse expression={'5*2'}/>
+        <Parse expression={'100/3'}/>
+        <Parse expression={'2*5+10,65'}/>
+        <Parse expression={'(10+5+2,75-3)*3'}/>
+      </div>
     </>
   )
 }

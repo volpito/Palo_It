@@ -6,7 +6,6 @@ function Zone2({cityList, onDelete, onSearch}) {
 
   return (
     <>
-    
     <Button value={'Search'} onSearch={onSearch} city={cityList}/>
 
     <div className="flex">
