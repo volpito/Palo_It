@@ -2,7 +2,7 @@ import React from 'react'
 import { FaTimes } from 'react-icons/fa';
 
 const City = ({city, onDelete}) => {
-//show the input city.name in a tag, and displays a button to delete the tag
+//show the input city.name in a tag, and displays a button to delete the tagg
   return (
     <div title="cityTitle">
       <button 
