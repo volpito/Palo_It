@@ -1,5 +1,5 @@
 import React from 'react'
-
+//generic function that allows the parser to split the expression into smaller bits, one operator at the time
 const split = (expression, operator) => {
   const result = [];
   let braces = 0;
@@ -22,7 +22,7 @@ const split = (expression, operator) => {
   return result;
 };
 
-// this will only take strings containing * operator [ no + ]
+// this will take strings containing * operator [ no + ] and check for both ( and / 
 const parseMultiplicationSeparatedExpression = (expression) => {
   console.log(expression)
   const numbersString = split(expression, '*');

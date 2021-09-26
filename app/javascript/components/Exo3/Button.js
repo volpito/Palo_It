@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Button({value, onSearch, city}) {
-  
+  //search button with action 'onClick'
   return (
     <div className="rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
     <button

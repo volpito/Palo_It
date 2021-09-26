@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
   skip_before_action :verify_authenticity_token
   
   def city 
+    #setting up and rendering of the JSON that lists items by their city_id 
+    #/products/city/:id
     @products = Product.all
     @cities = City.all
     @city = City.find_by(id: params[:city_id])
@@ -38,11 +40,6 @@ class ProductsController < ApplicationController
   # POST /products or /products.json
   def create
     @product = Product.new(product_params)
-
-    #if @product.city_id=='1'
-    #  @product.city_id = 1
-    #  @product.prodCity = "Lyon"
-    #end
 
     respond_to do |format|
       if @product.save

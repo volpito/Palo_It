@@ -1,7 +1,8 @@
 import React from 'react'
 
 function AddButton() {
-  
+  //add btn that redirects to the scaffold form 
+  //the form doesn't work because it returns a sting instead of an int for mandatory city_id
   return (
     <div className="rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
     <button

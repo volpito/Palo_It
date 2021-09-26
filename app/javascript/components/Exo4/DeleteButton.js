@@ -1,7 +1,7 @@
 import React from 'react'
 
 function DeleteButton(id) {
-
+//fetch method delete linked to a btn used to destroy a product via an id prop
   function handleDelete(id) {
       fetch(`/products/${id.id}`, {
         method: 'delete',

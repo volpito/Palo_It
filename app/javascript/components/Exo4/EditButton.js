@@ -1,5 +1,5 @@
 import React from 'react'
-
+//btn redirecting to the update form of the scaffold
 function EditButton({id}) {
   return (
     <div>

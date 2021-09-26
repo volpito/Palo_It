@@ -3,6 +3,8 @@ import EditButton from '../Exo4/EditButton';
 import DeleteButton from '../Exo4/DeleteButton';
 import AddButton from '../Exo4/AddButton';
 
+//secondary fetch used to only display the items listed in the city inputed by user
+//both displays are almost identical
 function FetchCity({id}) {
   const [products, setProducts] = useState([]);
 

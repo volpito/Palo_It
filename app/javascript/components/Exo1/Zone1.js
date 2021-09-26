@@ -10,7 +10,7 @@ function Zone1() {
   const [cityList, setCityList] = useState([])
   const [searchId, setSearchId] = useState([])
   const [products, setProducts] = useState([]);
-
+//fetches and sets the products in an array for later purposes
   useEffect(() => {
     fetch(`/products`, {
       method: 'get',
@@ -26,7 +26,8 @@ function Zone1() {
     });
 
   }, []);
-
+//get the input value of the city, normalises it and filters it with the corresponding cities, and turns the whole thing into an array
+//then resets the input value to null
   function handleClick() {
     var cityName = cityRef.current.value
     if (cityName === '') return
@@ -39,7 +40,7 @@ function Zone1() {
     })
     cityRef.current.value = null;
   } 
-
+//uses the fetched products to compare its data with the one issued by the user
   function handleSearch(city) {
     products.filter((a) => {
       if(a.prodCity == ""){
@@ -53,7 +54,7 @@ function Zone1() {
     })
     console.log(searchId)
   }
-
+//deletes the city tag
   const deleteCity = (id) => {
     setCityList(cityList.filter(a => a.id !== id))
   }
