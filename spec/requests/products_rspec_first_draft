@@ -1,0 +1,45 @@
+require 'rails_helper'
+
+describe 'Products API', type: :request do
+
+  describe 'GET /products'do
+    before do 
+      FactoryBot.create(:city, cityName: 'lyon')
+      FactoryBot.create(:product, prodRef: 'OIP',prodCity: 'lyon',prodName: 'fourchette',prodPrice: '200', city_id: 1)
+    end
+
+    it 'gets all products and checks response' do
+      get '/products'
+
+      expect(response).to have_http_status(:success)
+      expect(JSON.parse(response.body).length).to eq(1)
+    end
+  end
+
+  describe 'POST /products' do
+    before do 
+      FactoryBot.create(:city, cityName: 'lyon')
+    end
+
+    it 'creates new product and checks response' do
+      expect {
+        post '/products', params: { product: {prodRef: 'ERFGHJKL',prodCity: 'lyon',prodName: 'malette',prodPrice: '200', city_id: 1}}
+      }
+
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe 'DELETE /products/:id' do
+    it 'deletes a product' do
+
+    FactoryBot.create(:city, cityName: 'lyon')
+    product = FactoryBot.create(:product, prodRef: 'OUIYF',prodCity: 'lyon',prodName: 'échalette',prodPrice: '200', city_id: 1)
+
+    destroy "/products/#{product.id}"
+
+    expect(response).to have_http_status(:no_content)
+    end
+  end
+
+end
