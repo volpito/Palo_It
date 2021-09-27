@@ -6,8 +6,10 @@ import DeleteButton from '../Exo4/DeleteButton';
 function Fetch() {
   //main fetch for all products, and then displaying the list (infinite useEffect loop to sort)
   const [products, setProducts] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
 
   const fetchProducts = () => {
+    console.log(isFetching)
     fetch(`/products`, {
     method: 'get',
     })    
@@ -20,9 +22,12 @@ function Fetch() {
     .catch(function () {
       console.log("error fetch");
     });
+    setIsFetching(false)
   }
 
-  useEffect( () => {fetchProducts();}, [/* products */]);  //but infinite server loop
+  useEffect( () => {
+    fetchProducts()
+  }, [isFetching]); 
   
   return (
     <div title="fetchTitle">
@@ -51,7 +56,7 @@ function Fetch() {
               <td className="text-center">{a.prodCity}  </td>
               <td className="text-center">{a.prodPrice} </td>
               <td className="text-center"><EditButton id={a.id}/></td>
-              <td className=""><DeleteButton id={a.id}/></td>
+              <td className="" onClick={() => setIsFetching(true)}><DeleteButton id={a.id} /></td>
             </tr>
           </tbody>
         )
