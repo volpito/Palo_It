@@ -26,24 +26,32 @@
     <%= form.text_field :prodPrice %>
   </div>
 
-  <%= form.label :prodCity %>
-<!--Here is where the city_id is a string instead of an int-->
+  <div class="field">
+    <%= form.label :prodCity %>
+    <%= form.text_field :prodCity %>
+  </div>
+
+<!--Here is where the city_id is set-->
   <div class="flex field my-2">
     <div class="ml-1">
-    <%= form.radio_button :city_id, @product.city_id=[1] %> 
+    <%= form.radio_button :city_id, Integer(1) %> 
     <%= form.label :city_id, ' Lyon' %>
     </div>
     <div class="ml-4">
-    <%= form.radio_button :city_id, @product.city_id=[2] %> 
+    <%= form.radio_button :city_id, Integer(2) %> 
     <%= form.label :city_id, ' Marseille' %>
     </div>
     <div class="ml-4">
-    <%= form.radio_button :city_id, @product.city_id=[3] %> 
+    <%= form.radio_button :city_id, Integer(3) %> 
     <%= form.label :city_id, ' Lille'%>
     </div>
     <div class="ml-4">
-    <%= form.radio_button :city_id, @product.city_id=[4] %> 
+    <%= form.radio_button :city_id, Integer(4) %> 
     <%= form.label :city_id, ' Paris'%>
+    </div>
+    <div class="ml-4">
+    <%= form.radio_button :city_id, Integer(5) %> 
+    <%= form.label :city_id, ' Toulouse'%>
     </div>
   </div>
 

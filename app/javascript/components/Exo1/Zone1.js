@@ -90,6 +90,7 @@ function Zone1() {
         <Parse expression={'100/3'}/>
         <Parse expression={'2*5+10,65'}/>
         <Parse expression={'(10+5+2,75-3)*3'}/>
+        <Parse expression={'(10+5+2,75-3)*3'}/>
       </div>
     </>
   )
