@@ -26,8 +26,12 @@
     <%= form.text_field :prodPrice %>
   </div>
 
-  <%= form.label :prodCity %>
-<!--Here is where the city_id is a string instead of an int-->
+  <div class="field">
+    <%= form.label :prodCity %>
+    <%= form.text_field :prodCity %>
+  </div>
+
+<!--Here is where the city_id is set-->
   <div class="flex field my-2">
     <div class="ml-1">
     <%= form.radio_button :city_id, Integer(1) %> 
