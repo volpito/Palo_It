@@ -24,7 +24,6 @@ const split = (expression, operator) => {
 
 // this will take strings containing * operator [ no + ] and check for both ( and / 
 const parseMultiplicationSeparatedExpression = (expression) => {
-  console.log(expression)
   const numbersString = split(expression, '*');
   const numbers = numbersString.map(noStr => {
     if (noStr[0] == '(') {
