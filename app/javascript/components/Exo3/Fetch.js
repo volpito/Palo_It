@@ -4,7 +4,7 @@ import EditButton from '../Exo4/EditButton';
 import DeleteButton from '../Exo4/DeleteButton';
 
 function Fetch() {
-  //main fetch for all products, and then displaying the list (infinite useEffect loop to sort)
+  //main fetch for all products, and then displaying the list
   const [products, setProducts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
 
