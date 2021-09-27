@@ -66,11 +66,9 @@ As you'll notice, the app can be improved. Here is a list of what I stumbled upo
 
 1_ you can set a tag for as many cities as you want, but the search button will only filter the list below for the last one you set as a tag and searched for.
 
-2_ if you delete an item, you'll need to refresh the page for the list to upload (the useEffect dependency causes it to loop infinitely so I chose to put it as a comment in hope that I would find a solution to the issue)
+2_ there is a bunch of errors (regarding map) that run in the console...
 
-3_ there is a bunch of errors (regarding map) that run in the console...
-
-4_ I hoped you wouldn't notice it but the city tags enventually go OVER the search button... as long as you don't hover on it with you mouse. Nothing major, I'll set it inside rows or something if I ever get to the end of this test.
+3_ I hoped you wouldn't notice it but the city tags enventually go OVER the search button... as long as you don't hover on it with you mouse. Nothing major, I'll set it inside rows or something if I ever get to the end of this test.
 
 Hope you'll like it !
 
