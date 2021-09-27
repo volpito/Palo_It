@@ -7,8 +7,9 @@ import AddButton from '../Exo4/AddButton';
 //both displays are almost identical
 function FetchCity({id}) {
   const [products, setProducts] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
 
-  useEffect(() => {
+  const fetchCity = () => {
     fetch(`/products/city/${id}`, {
       method: 'get',
     })    
@@ -21,8 +22,16 @@ function FetchCity({id}) {
     .catch(function () {
       console.log("error fetch city");
     });
+    setIsFetching(false)
+  }
 
+  useEffect(() => {
+    fetchCity()
   }, [id]);
+
+  useEffect(() => {
+    fetchCity()
+  }, [isFetching]);
 
   return (
     <div>
@@ -52,7 +61,7 @@ function FetchCity({id}) {
             <td className="text-center">{a.prodCity}</td>
             <td className="text-center">{a.prodPrice}</td>
             <td className="text-center"><EditButton id={a.id}/></td>
-            <td className=""><DeleteButton id={a.id}/></td>
+            <td className="" onClick={() => setIsFetching(true)}><DeleteButton id={a.id}/></td>
           </tr>
         </tbody>
         )
