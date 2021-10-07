@@ -8,7 +8,9 @@ In any case, I humbly welcome you to this app.
 
 This is a react-rails app, including both languages in a single project-file. To run the app, please enter these commands in your terminal :
 
-bundle install yarn install (and also maybe) npm install
+bundle install 
+yarn 
+(and also maybe) npm install
 
 I would then advise you to make sure that the databases are up and running with the following :
 
